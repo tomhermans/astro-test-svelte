@@ -1,0 +1,96 @@
+---
+// Component Imports
+import fs from 'node:fs/promises';
+import schema from "../theme/schema.json" // native astro import and parse JSON
+
+import Baselayout from '../layouts/Baselayout.astro';
+
+
+// You can import components from any supported Framework here!
+import Nav from '$components/Nav.astro';
+import Tour from '$components/Tour.astro';
+
+import PreactCounter from '../components/PreactCounter.jsx';
+import ReactCounter from '../components/ReactCounter.jsx';
+import SvelteCounter from '../components/SvelteCounter.svelte';
+
+import SimpleSvelte from '../components/SimpleSvelte.svelte';
+import Select from '../components/Select.jsx';
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+let title = 'My Astro Site';
+
+const url = new URL('../theme/schema.json', import.meta.url);
+const json = await fs.readFile(url, 'utf-8');
+const data = JSON.parse(json);
+
+console.log('schema:: ',schema);
+
+
+// const data2 = JSON.parse(schema);
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>{title}</title>
+
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href={Astro.resolve("../styles/global.css")} >
+  <link rel="stylesheet" href={Astro.resolve("../styles/open-props.min.css")} >
+	<style global>
+		@import "../styles/home.css";
+	</style>
+  
+	<style>
+		header {
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			max-width: min(100%, 68ch);
+		}
+	</style>
+</head>
+<body>
+
+	<main class="bg-red-200 p-4">
+
+		<header>
+			<div>
+				<img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
+				<h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
+			</div>
+		</header>
+    <Nav />
+
+    <Select stuff="data" schema="schema" name="selectcomponent" />
+
+    <SimpleSvelte name="Astrid" answer={42} count="10" client:visible />
+
+    <div class="bg-red-400 p-16">test</div>
+		<Tour />
+
+		<!--
+
+		You can also use imported framework components directly in your markup!
+		
+		Note: by default, these components are NOT interactive on the client.
+		The `:visible` directive tells Astro to make it interactive.
+		
+		See https://docs.astro.build/core-concepts/component-hydration/ 
+
+		-->
+
+		<PreactCounter client:visible />
+
+		<ReactCounter client:visible />
+
+		<SvelteCounter client:visible />
+	</main>
+</body>
+</html> 

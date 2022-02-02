@@ -1,0 +1,52 @@
+.theme-custom-dark {
+  --color-primary: #0ea5e9;
+  --color-primary-light: #7fd2f7;
+  --color-primary-dark: #075071;
+  --color-secondary: #ea580c;
+  --color-secondary-light: #f8a77d;
+  --color-secondary-dark: #712a06;
+  --color-accent-1: #e2ae12;
+  --color-accent-1-light: #f5d77f;
+  --color-accent-1-dark: #6c5309;
+  --color-accent-2: #0b7a75;
+  --color-accent-2-light: #1aeae1;
+  --color-accent-2-dark: #000505;
+  --color-accent-3: #6366f1;
+  --color-accent-3-light: #d8d9fb;
+  --color-accent-3-dark: #1215c3;
+  --color-accent-4: #f75590;
+  --color-accent-4-light: #fdcfdf;
+  --color-accent-4-dark: #c3094d;
+  --color-bg: #111827;
+  --color-text: #f9fafb;
+  --color-bg-light: #111827;
+  --color-text-light: #f9fafb;
+  --color-bg-dark: #111827;
+  --color-text-dark: #f9fafb;
+}
+.theme-sunset {
+  --color-text: #2f0c46;
+    --color-text-light: #4c1371;
+    --color-text-dark: #12051a;
+    --color-bg: #fcedf2;
+    --color-bg-light: #fff;
+    --color-bg-dark: #f5c1d2;
+    --color-primary: #c05299;
+    --color-primary-light: #e2afd0;
+    --color-primary-dark: #6b2753;
+    --color-secondary: #fbbf24;
+    --color-secondary-light: #fde4a1;
+    --color-secondary-dark: #9d7203;
+    --color-accent-1: #973aa8;
+    --color-accent-1-light: #cb8bd7;
+    --color-accent-1-dark: #421949;
+    --color-accent-2: #c05299;
+    --color-accent-2-light: #e2afd0;
+    --color-accent-2-dark: #6b2753;
+    --color-accent-3: #6d23b6;
+    --color-accent-3-light: #ad74e4;
+    --color-accent-3-dark: #2d0e4b;
+    --color-accent-4: #fbbf24;
+    --color-accent-4-light: #fde4a1;
+    --color-accent-4-dark: #9d7203;
+}
